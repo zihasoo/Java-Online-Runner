@@ -19,7 +19,7 @@ public class JavaExecuteServerApplication {
 	}
 
 	@PostMapping("/runCode")
-	public String testAPI(@RequestBody String code) {
+	public String runner(@RequestBody String code) {
 		return runJavaCode(code);
 	}
 
