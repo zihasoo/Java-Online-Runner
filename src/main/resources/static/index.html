@@ -25,7 +25,7 @@ Server specification: JAVA Spring Boot</pre>
 
     btn.addEventListener(
         "click", function () {
-            fetch("http://203.246.84.129:53000/runCode", {
+            fetch("/runCode", {
                 method: "POST",
                 body: code.value
             }).then(async (response) => {
