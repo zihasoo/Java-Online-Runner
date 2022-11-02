@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Java Runner</title>
+    <link rel="icon" href="java.ico"/>
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
-<label for="code"></label>
-<textarea name="texts" id="code" cols="65" rows="25" style="font-size: larger"></textarea>
-<div style="margin: 20px 0">
-    <button id="submitBtn" style="width: 120px; height: 40px; font-size: medium">
+
+<div id="code_area">
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+</div>
+
+<div class="middle_box">
+    <button id="submit_btn">
         코드 실행하기
     </button>
+    <label class="dropdown_wrapper">
+        테마:
+        <select id="dropdown">
+            <option value="default">default</option>
+            <option value="cobalt" selected>cobalt</option>
+            <option value="one_dark">one_dark</option>
+            <option value="monokai">monokai</option>
+            <option value="github">github</option>
+        </select>
+    </label>
 </div>
-<div style="border: solid black 1px; width: 540px;">
-    <pre id="result" style="font-size: larger; margin: 10px 20px">JAVA version: corretto-17
+<div id="output_box">
+    <pre id="result">JAVA version: corretto-17
 System specification: AMD Ryzen 5 3500 6-core
 Server specification: JAVA Spring Boot</pre>
 </div>
 </body>
-<script>
-    const btn = document.getElementById("submitBtn");
-    const code = document.getElementById("code");
-    const result = document.getElementById("result");
-
-    btn.addEventListener(
-        "click", function () {
-            fetch("https://runjava.mcv.kr:53000/runCode", {
-                method: "POST",
-                body: code.value
-            }).then(async (response) => {
-                result.textContent = await response.text()
-            }).catch((err) => console.error(err));
-        }
-    );
-</script>
 </html>

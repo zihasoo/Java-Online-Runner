@@ -1,9 +1,9 @@
 package com.example.javaexecuteserver;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +22,13 @@ public class JavaExecuteServerApplication {
 	public String runner(@RequestBody String code) {
 		return runJavaCode(code);
 	}
+
+	// letsencrypt 인증서 발급 라우터
+//	@GetMapping("/.well-known/acme-challenge/{fileName}")
+//	public String auth(@PathVariable String fileName) throws IOException {
+//		var file = new File("D:\\Codes\\Java\\Java Execute Server\\.well-known\\acme-challenge\\"+fileName);
+//		return new Scanner(file).nextLine();
+//	}
 
 	public static String runJavaCode(String code) {
 		ProcessBuilder builder = new ProcessBuilder();

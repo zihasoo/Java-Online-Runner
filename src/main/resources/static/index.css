@@ -1,0 +1,33 @@
+#code_area {
+    font-size: medium;
+    width: 950px;
+    height: 540px;
+}
+
+.middle_box {
+    margin: 20px 0;
+}
+
+#result {
+    font-family: Consolas, monospace;
+    font-size: medium;
+    margin: 10px 20px
+}
+
+.middle_box #submit_btn {
+    width: 120px;
+    height: 40px;
+    font-size: medium
+}
+.dropdown_wrapper{
+    margin: 20px;
+    font-size: medium;
+}
+.dropdown_wrapper #dropdown{
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+}
+#output_box{
+    border: solid black 1px;
+}
