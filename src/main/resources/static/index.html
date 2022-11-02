@@ -26,7 +26,6 @@ Server specification: JAVA Spring Boot</pre>
     btn.addEventListener(
         "click", function () {
             fetch("https://runjava.mcv.kr:53000/runCode", {
-                headers: {"Access-Control-Allow-Origin": "*"},
                 method: "POST",
                 body: code.value
             }).then(async (response) => {
