@@ -22,12 +22,6 @@ public class JavaExecuteServerApplication {
 		return runJavaCode(code);
 	}
 
-	//letsencrypt 인증서 발급 라우터
-//	@GetMapping("/.well-known/acme-challenge/{fileName}")
-//	public String auth(@PathVariable String fileName) throws IOException {
-//		var file = new File("D:\\Codes\\Java\\Java Execute Server\\.well-known\\acme-challenge\\"+fileName);
-//		return new Scanner(file).nextLine();
-//	}
 	public static String runJavaCode(String code) {
 		ProcessBuilder builder = new ProcessBuilder();
 		builder.directory(new File(workingPath));
