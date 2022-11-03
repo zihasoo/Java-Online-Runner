@@ -9,12 +9,7 @@ let editor = ace.edit(code_area, {
 });
 
 function change_theme(){
-    if(dropdown.value === "default"){
-        editor.setTheme();
-    }
-    else {
-        editor.setTheme("ace/theme/" + dropdown.value);
-    }
+    editor.setTheme("ace/theme/" + dropdown.value);
 }
 
 function compile_code () {
