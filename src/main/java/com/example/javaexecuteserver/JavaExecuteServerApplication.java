@@ -48,7 +48,6 @@ public class JavaExecuteServerApplication {
 					"java Main"
 			);
 			Process process = builder.start();
-
 			return new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8) +
 					new String(process.getErrorStream().readAllBytes(), StandardCharsets.UTF_8);
 
