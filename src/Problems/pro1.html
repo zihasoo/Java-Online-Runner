@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Runner</title>
+    <link rel="icon" href="java.ico"/>
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+<div id="code_area">
+import java.io.IOException;
+
+class Main {
+    public static void main (String[] args){
+        try {
+            someMethod();
+        }
+        catch (IOException e){
+            System.out.println("IOException" + e.getMessage());
+        }
+        catch (RuntimeException e){
+            System.out.println("RuntimeException: " + e.getMessage());
+        }
+        catch (Exception e){
+            System.out.println("Exception:" + e.getMessage());
+        }
+        catch (Throwable e){
+            System.out.println("Exception:" + e.getMessage());
+        }
+    }
+
+    static void someMethod() throws NullPointerException{
+        throw new NullPointerException();
+    }
+}
+
+</div>
+<!--해당 코드의 실행 결과로 올바른 것은?-->
+
+<div class="middle_box">
+    <button id="submit_btn">
+        코드 실행하기
+    </button>
+    <label class="dropdown_wrapper">
+        테마:
+        <select id="dropdown">
+            <option value="cobalt" selected>cobalt</option>
+            <option value="dracula">dracula</option>
+            <option value="dreamweaver">dreamweaver</option>
+            <option value="one_dark">one_dark</option>
+            <option value="monokai">monokai</option>
+            <option value="github">github</option>
+        </select>
+    </label>
+</div>
+<div id="output_box">
+    <pre id="result">JAVA version: corretto-17
+System specification: AMD Ryzen 5 3500 6-core
+Server specification: JAVA Spring Boot</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Runner</title>
+    <link rel="icon" href="java.ico"/>
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+<div id="code_area">
+class Main {
+    public static void main(String[] args) {
+        try {
+            someMethod();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    static void someMethod(){
+        try {
+            thrower();
+        }
+        catch (Error e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException("Another Exception");
+        }
+    }
+
+    static void thrower() {
+        throw new NullPointerException("NullPointerException!");
+    }
+}
+</div>
+<!--해당 코드의 실행 결과로 올바른 것은?
+1. 컴파일 에러가 난다.
+2. 런타임 에러가 난다.
+3. NullPointerException! 이 출력되고 Another Exception 이 출력된다.
+4. NullPointerException! 이 출력된다.
+
+정답: NullPointerException! 이 출력된다.
+RuntimeException를 제외하고, Exception의 서브클래스들은 throw되지 않는 예외를 catch하려고 하면 컴파일 에러가 난다.
+하지만 해당 문제에선 Error를 catch하려 했고, throw되지 않더라도 사용 가능하다.
+그리고 RuntimeException은 Error에 catch될 수 없으므로 한 단계 밖으로 나가게 된다.
+RuntimeException은 예외 처리가 강제되지 않기 때문에 someMethod가 throws를 명시하지 않더라도 컴파일 에러가 나지 않는다.
+-->
+
+<div class="middle_box">
+    <button id="submit_btn">
+        코드 실행하기
+    </button>
+    <label class="dropdown_wrapper">
+        테마:
+        <select id="dropdown">
+            <option value="cobalt" selected>cobalt</option>
+            <option value="dracula">dracula</option>
+            <option value="dreamweaver">dreamweaver</option>
+            <option value="one_dark">one_dark</option>
+            <option value="monokai">monokai</option>
+            <option value="github">github</option>
+        </select>
+    </label>
+</div>
+<div id="output_box">
+    <pre id="result">JAVA version: corretto-17
+System specification: AMD Ryzen 5 3500 6-core
+Server specification: JAVA Spring Boot</pre>
+</div>
+</body>
+</html>
