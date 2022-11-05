@@ -13,7 +13,7 @@ function change_theme(){
 }
 
 function compile_code () {
-    fetch("https://runjava.mcv.kr:53000/runCode", {
+    fetch("https://runjava.mcv.kr/runCode", {
         method: "POST",
         body: editor.getValue()
     }).then(async (response) => {
