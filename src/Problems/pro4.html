@@ -11,34 +11,34 @@
 <body>
 
 <div id="code_area">
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = null;
         try {
-            someMethod();
-        }
-        catch (IOException e){
-            System.out.println("IOException" + e.getMessage());
-        }
-        catch (RuntimeException e){
-            System.out.println("RuntimeException: " + e.getMessage());
-        }
-        catch (Exception e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-        catch (Throwable e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-    }
+            br = new BufferedReader(new InputStreamReader(System.in));
 
-    static void someMethod() throws NullPointerException{
-        throw new NullPointerException();
+            int x = Integer.parseInt(br.readLine());
+            int y = Integer.parseInt(br.readLine());
+
+            System.out.println(x / y);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null)
+            br.close();
+        }
     }
 }
 
 </div>
-<!--해당 코드의 실행 결과로 올바른 것은?-->
+<!--해당 코드를 간결하게 고치시오-->
 
 <div class="middle_box">
     <button id="submit_btn">

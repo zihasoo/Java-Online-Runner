@@ -11,34 +11,24 @@
 <body>
 
 <div id="code_area">
-import java.io.IOException;
-
 class Main {
-    public static void main (String[] args){
-        try {
-            someMethod();
-        }
-        catch (IOException e){
-            System.out.println("IOException" + e.getMessage());
-        }
-        catch (RuntimeException e){
-            System.out.println("RuntimeException: " + e.getMessage());
-        }
-        catch (Exception e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-        catch (Throwable e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-    }
+    public static void main(String[] args) {
+        int num1 = 300;
+        Float num2 = 0.7777777777f;
+        Number num3 = num1 + num2;
+        System.out.println(num3);
+        System.out.println(num3.intValue());
+        System.out.println(num3.floatValue());
 
-    static void someMethod() throws NullPointerException{
-        throw new NullPointerException();
+        Integer a = 5;
+        Integer b = a;
+        a++;
+        System.out.println(a);
+        System.out.println(b);
     }
 }
-
 </div>
-<!--해당 코드의 실행 결과로 올바른 것은?-->
+<!--실행 결과는?-->
 
 <div class="middle_box">
     <button id="submit_btn">

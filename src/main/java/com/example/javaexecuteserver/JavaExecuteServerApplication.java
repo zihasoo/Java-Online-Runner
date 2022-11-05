@@ -3,9 +3,12 @@ package com.example.javaexecuteserver;
 import java.io.*;
 
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
@@ -18,11 +21,21 @@ public class JavaExecuteServerApplication {
 	}
 
 	@PostMapping("/runCode")
-	public String runner(@RequestBody String code) {
-		return runJavaCode(code);
+	public String simpleRunner(@RequestBody String code) {
+		return runJavaCode(code,null);
 	}
 
-	public static String runJavaCode(String code) {
+	@PostMapping("/runCodeWithInput")
+	public String InputRunner(@RequestBody String codeAndInput) {
+		try {
+			var obj = new JSONObject(codeAndInput);
+			return runJavaCode(obj.getString("code"), obj.getString("input"));
+		} catch (JSONException e) {
+			return "내부 오류 발생! : " + e.getMessage();
+		}
+	}
+
+	public static String runJavaCode(String code, String input) {
 		ProcessBuilder builder = new ProcessBuilder();
 		builder.directory(new File(workingPath));
 
@@ -48,12 +61,24 @@ public class JavaExecuteServerApplication {
 					"java Main"
 			);
 			Process process = builder.start();
+
+			if (input != null){
+				var writer = new BufferedWriter(process.outputWriter());
+				writer.write(input);
+				writer.flush();
+				writer.close();
+			}
+
+			if(!process.waitFor(5,TimeUnit.SECONDS)){
+				return "프로그램을 실행하는데 시간이 너무 오래 걸립니다.";
+			}
+
 			return new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8) +
 					new String(process.getErrorStream().readAllBytes(), StandardCharsets.UTF_8);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "내부 오류 발생!";
+			return "내부 오류 발생! : " + e.getMessage();
 		}
 	}
 }

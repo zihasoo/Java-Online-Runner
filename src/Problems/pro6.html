@@ -11,43 +11,30 @@
 <body>
 
 <div id="code_area">
+import java.util.ArrayList;
+
 class Main {
     public static void main(String[] args) {
-        try {
-            someMethod();
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+        String a = "Hello";
+        String b = "World";
+        a += b;
+        String c = "HelloWorld";
+        System.out.println(a == c);
 
-    static void someMethod(){
-        try {
-            thrower();
+        ArrayList&ltint&gt arr = new ArrayList<>();
+        for (Integer i = 0; i < 10; i++) {
+            arr.add(i);
         }
-        catch (Error e) {
-            System.out.println(e.getMessage());
-            throw new RuntimeException("Another Exception");
-        }
-    }
 
-    static void thrower() {
-        throw new NullPointerException("NullPointerException!");
+        Byte num1 = 1;
+        Short num2 = 10;
+        Integer num3 = num1 + num2;
+        Long num4 = 1000;
+        System.out.println(num3 == num4);
     }
 }
 </div>
-<!--해당 코드의 실행 결과로 올바른 것은?
-1. 컴파일 에러가 난다.
-2. 런타임 에러가 난다.
-3. NullPointerException! 이 출력되고 Another Exception 이 출력된다.
-4. NullPointerException! 이 출력된다.
-
-정답: NullPointerException! 이 출력된다.
-RuntimeException를 제외하고, Exception의 서브클래스들은 throw되지 않는 예외를 catch하려고 하면 컴파일 에러가 난다.
-하지만 해당 문제에선 Error를 catch하려 했고, throw되지 않더라도 사용 가능하다.
-그리고 RuntimeException은 Error에 catch될 수 없으므로 한 단계 밖으로 나가게 된다.
-RuntimeException은 예외 처리가 강제되지 않기 때문에 someMethod가 throws를 명시하지 않더라도 컴파일 에러가 나지 않는다.
--->
+<!--해당 코드엔 문제가 있다. 문제를 모두 고치시오(에러 포함)-->
 
 <div class="middle_box">
     <button id="submit_btn">

@@ -11,34 +11,32 @@
 <body>
 
 <div id="code_area">
-import java.io.IOException;
-
 class Main {
-    public static void main (String[] args){
-        try {
-            someMethod();
-        }
-        catch (IOException e){
-            System.out.println("IOException" + e.getMessage());
-        }
-        catch (RuntimeException e){
-            System.out.println("RuntimeException: " + e.getMessage());
-        }
-        catch (Exception e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-        catch (Throwable e){
-            System.out.println("Exception:" + e.getMessage());
-        }
-    }
-
-    static void someMethod() throws NullPointerException{
-        throw new NullPointerException();
+    public static void main(String[] args) {
+        System.out.println((int)Character.MIN_VALUE);
+        System.out.println((int)Character.MAX_VALUE);
+        System.out.println();
+        System.out.println(Byte.MIN_VALUE);
+        System.out.println(Byte.MAX_VALUE);
+        System.out.println();
+        System.out.println(Short.MIN_VALUE);
+        System.out.println(Short.MAX_VALUE);
+        System.out.println();
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println();
+        System.out.println(Long.MIN_VALUE);
+        System.out.println(Long.MAX_VALUE);
+        System.out.println();
+        System.out.println(Float.MIN_VALUE);
+        System.out.println(Float.MAX_VALUE);
+        System.out.println();
+        System.out.println(Double.MIN_VALUE);
+        System.out.println(Double.MAX_VALUE);
     }
 }
-
 </div>
-<!--해당 코드의 실행 결과로 올바른 것은?-->
+<!--실행 결과는?-->
 
 <div class="middle_box">
     <button id="submit_btn">

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Java Runner</title>
-  <link rel="icon" href="java.ico"/>
-  <link href="index.css" type="text/css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
-  <script src="index.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Java Runner</title>
+    <link rel="icon" href="java.ico"/>
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
 
@@ -38,20 +38,23 @@ class Main {
 -->
 
 <div class="middle_box">
-  <button id="submit_btn">
-    코드 실행하기
-  </button>
-  <label class="dropdown_wrapper">
-    테마:
-    <select id="dropdown">
-      <option value="cobalt" selected>cobalt</option>
-      <option value="dracula">dracula</option>
-      <option value="dreamweaver">dreamweaver</option>
-      <option value="one_dark">one_dark</option>
-      <option value="monokai">monokai</option>
-      <option value="github">github</option>
-    </select>
-  </label>
+    <button id="submit_btn">
+        코드 실행하기
+    </button>
+    <label class="dropdown_wrapper">
+        테마:
+        <select id="dropdown">
+            <option value="cobalt" selected>cobalt</option>
+            <option value="dracula">dracula</option>
+            <option value="dreamweaver">dreamweaver</option>
+            <option value="one_dark">one_dark</option>
+            <option value="monokai">monokai</option>
+            <option value="github">github</option>
+        </select>
+    </label>
+    <label>
+        입력값: <textarea rows="2" id="input_box"></textarea>
+    </label>
 </div>
 <div id="output_box">
     <pre id="result">JAVA version: corretto-17
