@@ -1,16 +1,16 @@
 #code_area {
     font-size: medium;
-    width: 700px;
+    max-width: 4000px;
     height: 540px;
+    resize: vertical;
 }
 
 .middle_box {
-    padding: 20px 0;
-    width: 700px;
+    margin: 20px 0;
 }
 
 .middle_box #submit_btn {
-    width: 120px;
+    width: 140px;
     height: 40px;
     font-size: medium;
     color: black;
@@ -32,27 +32,34 @@
     height: 30px;
 }
 
-.middle_box #input_box {
+#input_box {
+    max-width: 4000px;
+    display: block;
+    outline: solid black 1px;
+}
+
+#input_box #input{
     background: #052440;
     vertical-align: middle;
     font-family: Consolas, monospace;
     font-size: medium;
     color: white;
-    width: 270px;
-    float: right;
-    resize: none;
+    resize: vertical;
+    border: none;
+    padding: 2% 3%;
+    width: 94%;
 }
 
 #output_box {
-    border: solid black 1px;
-    width: 698px;
+    outline: solid black 1px;
     background: #052440;
+    margin: 20px 0;
+    padding: 1px 20px;
 }
 
-#output_box #result {
+#output_box #output {
     font-family: Consolas, monospace;
     font-size: medium;
     color: white;
-    margin: 10px 20px;
     white-space: pre-wrap;
 }

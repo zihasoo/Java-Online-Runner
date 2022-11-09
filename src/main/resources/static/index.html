@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Java Runner</title>
-    <link rel="icon" href="java.ico"/>
     <link href="index.css" type="text/css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js"></script>
     <script src="index.js" defer></script>
@@ -33,12 +32,14 @@ class Main {
             <option value="github">github</option>
         </select>
     </label>
-    <label>
-        입력값: <textarea rows="2" id="input_box"></textarea>
-    </label>
 </div>
+
+<label id="input_box">
+    <textarea rows="3" id="input"></textarea>
+</label>
+
 <div id="output_box">
-    <pre id="result">JAVA version: corretto-17
+    <pre id="output">JAVA version: corretto-17
 System specification: AMD Ryzen 5 3500 6-core
 Server specification: JAVA Spring Boot</pre>
 </div>
