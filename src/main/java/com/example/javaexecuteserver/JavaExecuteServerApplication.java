@@ -4,6 +4,7 @@ import java.io.*;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.boot.SpringApplication;
@@ -16,11 +17,9 @@ import org.springframework.web.bind.annotation.*;
 public class JavaExecuteServerApplication {
     static final String workingPath = "D:\\Codes\\Java\\Java Execute Server\\src\\CodePool";
 
-    static String compileCCommand = "gcc Main.c -O2 -o Main.exe -static";
-    static String compileCppCommand = "g++ Main.cpp -O2 -o Main.exe -std=c++17 -static";
-    static String runCCppCommand = "Main.exe";
-    static String compileCsCommand = "dotnet new console ~~~";
-    static String runCsCommand = "Main.exe ~~~";
+    static String compileCCommand = "gcc Main.c -O2 -o CMain.exe -std=gnu17 -static";
+    static String compileCppCommand = "g++ Main.cpp -O2 -o CppMain.exe -std=gnu++20 -static";
+    static String compileCsCommand = "dotnet new console --force -o Main && dotnet publish Main --configuration Release --self-contained true --runtime win10-x64";
     static String compileJavaCommand = "javac Main.java";
     static String runJavaCommand = "java Main";
     static String compilePythonCommand = "py main.py";
@@ -66,14 +65,17 @@ public class JavaExecuteServerApplication {
                 break;
             case "c":
                 compileCommand = compileCCommand;
-                runCommand = runCCppCommand;
+                runCommand = "CMain.exe";
                 break;
             case "cpp":
                 compileCommand = compileCppCommand;
-                runCommand = runCCppCommand;
+                runCommand = "CppMain.exe";
                 break;
             case "cs":
-            case "python":
+                compileCommand = compileCsCommand;
+                runCommand = "CsMain.exe";
+                break;
+            case "py":
                 return "구현 예정";
             default:
                 return "잘못된 언어 요청";

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Cxih+4ktc58cZEvf9TV2xtatqo2tC4WbQJD6Q5wbsVIivec4pVx+zesHH7CsmN5hpykz0vDTrA1e7rR2/GQaDQ==",
+  "success": true,
+  "projectFilePath": "D:\\Codes\\Java\\Java Execute Server\\src\\CodePool\\Main\\Main.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sejj0\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.0\\microsoft.netcore.app.runtime.win-x64.7.0.0.nupkg.sha512",
+    "C:\\Users\\sejj0\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.0.nupkg.sha512",
+    "C:\\Users\\sejj0\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.0\\microsoft.aspnetcore.app.runtime.win-x64.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

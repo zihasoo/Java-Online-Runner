@@ -22,11 +22,17 @@
 }
 
 .middle_box .dropdown_wrapper {
-    margin: 20px;
+    margin: 0 0 0 20px;
     font-size: medium;
 }
 
-.middle_box .dropdown_wrapper #dropdown {
+.middle_box .dropdown_wrapper #color_dropdown {
+    font-size: medium;
+    width: 140px;
+    height: 30px;
+}
+
+.middle_box .dropdown_wrapper #lang_dropdown {
     font-size: medium;
     width: 140px;
     height: 30px;
@@ -46,8 +52,9 @@
     color: white;
     resize: vertical;
     border: none;
-    padding: 2% 3%;
-    width: 94%;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
 }
 
 #output_box {
