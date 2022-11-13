@@ -40,41 +40,46 @@ class Main {
 </div>
 <!--해당 코드의 실행 결과로 올바른 것은?-->
 
-<div class="middle_box">
-    <button id="submit_btn">
-        코드 실행하기
-    </button>
-    <label class="dropdown_wrapper">
-        테마:
-        <select id="color_dropdown">
-            <option value="cobalt" selected>cobalt</option>
-            <option value="dracula">dracula</option>
-            <option value="dreamweaver">dreamweaver</option>
-            <option value="one_dark">one_dark</option>
-            <option value="monokai">monokai</option>
-            <option value="github">github</option>
-        </select>
-    </label>
-    <label class="dropdown_wrapper">
-        언어:
-        <select id="lang_dropdown">
-            <option value="Java" selected>Java</option>
-            <option value="C++">C++</option>
-            <option value="C">C</option>
-            <option value="C#">C#</option>
-            <option value="Python">Python</option>
-        </select>
-    </label>
-</div>
+<details>
+    <summary>
+        실행 UI 열기
+    </summary>
+    <div class="middle_box">
+        <button id="submit_btn">
+            코드 실행하기
+        </button>
+        <label class="dropdown_wrapper">
+            테마:
+            <select id="color_dropdown">
+                <option value="cobalt" selected>cobalt</option>
+                <option value="dracula">dracula</option>
+                <option value="dreamweaver">dreamweaver</option>
+                <option value="one_dark">one_dark</option>
+                <option value="monokai">monokai</option>
+                <option value="github">github</option>
+            </select>
+        </label>
+        <label class="dropdown_wrapper">
+            언어:
+            <select id="lang_dropdown">
+                <option value="Java" selected>Java</option>
+                <option value="C++">C++</option>
+                <option value="C">C</option>
+                <option value="C#">C#</option>
+                <option value="Python">Python</option>
+            </select>
+        </label>
+    </div>
 
-<label id="input_box">
-    <textarea rows="3" id="input"></textarea>
-</label>
+    <label id="input_box">
+        <textarea rows="3" id="input"></textarea>
+    </label>
 
-<div id="output_box">
+    <div id="output_box">
     <pre id="output">JAVA version: corretto-17
 System specification: AMD Ryzen 5 3500 6-core
 Server specification: JAVA Spring Boot</pre>
-</div>
+    </div>
+</details>
 </body>
 </html>
